@@ -17,7 +17,7 @@ maplist(length_(9), Spielfeld_Zeilen),
 append(Spielfeld_Zeilen, Werte), Werte ins 1..9,
 
 % Regel 1 - Alle Werte einer Reihe muessen eindeutig sein
-maplist(all_distinct, Spielfeld_Zeilen)
+maplist(all_distinct, Spielfeld_Zeilen),
 
 % Erstellen der Spalten
 % Spielfeld_Spalten : Liste<Liste<Zahl>>
@@ -38,7 +38,7 @@ pruefe3x3Felder(S7, S8, S9)
 
 % --- Hilfsfunktionen ---
 % Funktion damit man die Laenge mit Hilfe von maplist/2 ueberpruefen kann
-length_(Wert, Liste) :- length(Liste, Wert)
+length_(Wert, Liste) :- length(Liste, Wert).
 
 % Erstellt 3x3-Felder und ueberprueft diese auf die Eindeutigkeit der enthaltenen Werte
 % Es werden 3 Zeilen eines Spielfeldes als Parameter erwartet
