@@ -5,9 +5,9 @@
 % Spielfeld_Zeilen : Liste<Liste<Zahl>>
 sudoku(Spielfeld_Zeilen) :-
 	% Pruefung ob es sich um ein gueltiges Spielfeld handelt
-	% Groeße des Spielfelds: 9x9
+	% Groesse des Spielfelds: 9x9
 	length(Spielfeld_Zeilen, 9),
-	% Pruefung das jede Reihe die gleiche Groeße besitzt
+	% Pruefung das jede Reihe die gleiche Groesse besitzt
 	maplist(length_(9), Spielfeld_Zeilen),
 	
 	% Zuweisung der Zahlen zu den einzelnen Feldern des Spielfelds
