@@ -42,7 +42,8 @@ length_(Wert, Liste) :- length(Liste, Wert)
 % Rekursive Abbruchbedingung - Alle 3 Felder wurden ueberprueft
 teste3x3Felder([], [], []).
 teste3x3Felder([F1, F2, F3 | Tail1], [F4, F5, F6 | Tail2], [F7, F8, F9 | Tail3]) :-
-	% Eindeutigkeitsprüfung des Feldes
+	% Eindeutigkeitspruefung des Feldes
+	% Regel 3 - Alle Felder eines 3x3-Feldes muessen eindeutig sein
 	all_distinct([F1, F2, F3, F4, F5, F6, F7, F8, F9]),
 	% Rekursion um das naechste Feld zu ueberpruefen.
 	teste3x3Felder(Tail1, Tail2, Tail3)
