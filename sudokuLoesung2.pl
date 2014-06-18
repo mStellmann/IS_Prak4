@@ -7,33 +7,33 @@
 % loesen eines Sudokus
 % Spielfeld_Zeilen : Liste<Liste<Zahl>>
 sudoku(Spielfeld_Zeilen) :-
-% Pruefung ob es sich um ein gueltiges Spielfeld handelt
-% Groesse des Spielfelds: 9x9
-length(Spielfeld_Zeilen, 9),
-% Pruefung das jede Reihe die gleiche Groesse besitzt
-maplist(length_(9), Spielfeld_Zeilen),
+  % Pruefung ob es sich um ein gueltiges Spielfeld handelt
+  % Groesse des Spielfelds: 9x9
+  length(Spielfeld_Zeilen, 9),
+  % Pruefung das jede Reihe die gleiche Groesse besitzt
+  maplist(length_(9), Spielfeld_Zeilen),
 
-% Zuweisung der Zahlen zu den einzelnen Feldern des Spielfelds
-append(Spielfeld_Zeilen, Werte), Werte ins 1..9,
+  % Zuweisung der Zahlen zu den einzelnen Feldern des Spielfelds
+  append(Spielfeld_Zeilen, Werte), Werte ins 1..9,
 
-% Regel 1 - Alle Werte einer Reihe muessen eindeutig sein
-maplist(all_distinct, Spielfeld_Zeilen),
+  % Regel 1 - Alle Werte einer Reihe muessen eindeutig sein
+  maplist(all_distinct, Spielfeld_Zeilen),
 
-% Erstellen der Spalten
-% Spielfeld_Spalten : Liste<Liste<Zahl>>
-transpose(Spielfeld_Zeilen, Spielfeld_Spalten),
+  % Erstellen der Spalten
+  % Spielfeld_Spalten : Liste<Liste<Zahl>>
+  transpose(Spielfeld_Zeilen, Spielfeld_Spalten),
 
-% Regel 2 - Alle Werte einer Spalte muessen eindeutig sein
-maplist(all_distinct, Spielfeld_Spalten),
-
-% Erstellen und Pruefung der 3x3-Felder
-Spielfeld_Spalten = [S1, S2, S3, S4, S5, S6, S7, S8, S9],
-% oberen 3 Felder
-pruefe3x3Felder(S1, S2, S3),
-% mittleren 3 Felder
-pruefe3x3Felder(S4, S5, S6),
-% unteren 3 Felder
-pruefe3x3Felder(S7, S8, S9)
+  % Regel 2 - Alle Werte einer Spalte muessen eindeutig sein
+  maplist(all_distinct, Spielfeld_Spalten),
+    
+  % Erstellen und Pruefung der 3x3-Felder
+  Spielfeld_Spalten = [S1, S2, S3, S4, S5, S6, S7, S8, S9],
+  % oberen 3 Felder
+  pruefe3x3Felder(S1, S2, S3),
+  % mittleren 3 Felder
+  pruefe3x3Felder(S4, S5, S6),
+  % unteren 3 Felder
+  pruefe3x3Felder(S7, S8, S9)
 .
 
 % --- Hilfsfunktionen ---
@@ -45,9 +45,9 @@ length_(Wert, Liste) :- length(Liste, Wert).
 % Rekursive Abbruchbedingung - Alle 3 Felder wurden ueberprueft
 pruefe3x3Felder([], [], []).
 pruefe3x3Felder([F1, F2, F3 | Tail1], [F4, F5, F6 | Tail2], [F7, F8, F9 | Tail3]) :-
-% Eindeutigkeitspruefung des Feldes
-% Regel 3 - Alle Felder eines 3x3-Feldes muessen eindeutig sein
-all_distinct([F1, F2, F3, F4, F5, F6, F7, F8, F9]),
-% Rekursion um das naechste Feld zu ueberpruefen.
-pruefe3x3Felder(Tail1, Tail2, Tail3)
+  % Eindeutigkeitspruefung des Feldes
+  % Regel 3 - Alle Felder eines 3x3-Feldes muessen eindeutig sein
+  all_distinct([F1, F2, F3, F4, F5, F6, F7, F8, F9]),
+  % Rekursion um das naechste Feld zu ueberpruefen.
+  pruefe3x3Felder(Tail1, Tail2, Tail3)
 .
