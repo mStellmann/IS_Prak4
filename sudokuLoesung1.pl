@@ -35,7 +35,7 @@ sudoku(Spielfeld_Zeilen) :-
 
 % --- Hilfsfunktionen ---
 % Funktion damit man die Laenge mit Hilfe von maplist/2 ueberpruefen kann
-length_(Wert, Liste) :- length(Liste, Wert)
+length_(Wert, Liste) :- length(Liste, Wert).
 
 % Erstellt 3x3-Felder und ueberprueft diese auf die Eindeutigkeit der enthaltenen Werte
 % Es werden 3 Zeilen eines Spielfeldes als Parameter erwartet
