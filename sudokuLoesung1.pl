@@ -14,7 +14,7 @@ sudoku(Spielfeld_Zeilen) :-
 	append(Spielfeld_Zeilen, Werte), Werte ins 1..9,
 	
 	% Regel 1 - Alle Werte einer Reihe muessen eindeutig sein
-	maplist(all_distinct, Spielfeld_Zeilen)
+	maplist(all_distinct, Spielfeld_Zeilen),
 	
 	% Erstellen der Spalten
 	% Spielfeld_Spalten : Liste<Liste<Zahl>>
