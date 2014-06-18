@@ -9,3 +9,7 @@ spielfeld(1, Spielfeld), sudoku(Spielfeld), maplist(writeln, Spielfeld).
 
 nicht vergessen:
 consult(sudokuLoesung1).
+
+
+
+Quelle Loesung1: http://www.swi-prolog.org/man/clpfd.html
