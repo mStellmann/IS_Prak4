@@ -26,11 +26,11 @@ sudoku(Spielfeld_Zeilen) :-
 	% Erstellen und Pruefung der 3x3-Felder
 	Spielfeld_Zeilen = [Z1, Z2, Z3, Z4, Z5, Z6, Z7, Z8, Z9],
 	% oberen 3 Felder
-	teste3x3Felder(Z1, Z2, Z3),
+	pruefe3x3Felder(Z1, Z2, Z3),
 	% mittleren 3 Felder
-	teste3x3Felder(Z4, Z5, Z6),
+	pruefe3x3Felder(Z4, Z5, Z6),
 	% unteren 3 Felder
-	teste3x3Felder(Z7, Z8, Z9)
+	pruefe3x3Felder(Z7, Z8, Z9)
 .
 
 % --- Hilfsfunktionen ---
@@ -40,11 +40,11 @@ length_(Wert, Liste) :- length(Liste, Wert)
 % Erstellt 3x3-Felder und ueberprueft diese auf die Eindeutigkeit der enthaltenen Werte
 % Es werden 3 Zeilen eines Spielfeldes als Parameter erwartet
 % Rekursive Abbruchbedingung - Alle 3 Felder wurden ueberprueft
-teste3x3Felder([], [], []).
-teste3x3Felder([F1, F2, F3 | Tail1], [F4, F5, F6 | Tail2], [F7, F8, F9 | Tail3]) :-
+pruefe3x3Felder([], [], []).
+pruefe3x3Felder([F1, F2, F3 | Tail1], [F4, F5, F6 | Tail2], [F7, F8, F9 | Tail3]) :-
 	% Eindeutigkeitspruefung des Feldes
 	% Regel 3 - Alle Felder eines 3x3-Feldes muessen eindeutig sein
 	all_distinct([F1, F2, F3, F4, F5, F6, F7, F8, F9]),
 	% Rekursion um das naechste Feld zu ueberpruefen.
-	teste3x3Felder(Tail1, Tail2, Tail3)
+	pruefe3x3Felder(Tail1, Tail2, Tail3)
 .
