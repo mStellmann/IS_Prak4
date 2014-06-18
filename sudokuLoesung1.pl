@@ -1,6 +1,8 @@
 :- use_module(library(clpfd)).
 :- consult(spielfelder).
 
+loesen(SpielfeldNummer) :- spielfeld(SpielfeldNummer, Spielfeld), time(sudoku(Spielfeld)), maplist(writeln, Spielfeld).
+
 % loesen eines Sudokus
 % Spielfeld_Zeilen : Liste<Liste<Zahl>>
 sudoku(Spielfeld_Zeilen) :-

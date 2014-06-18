@@ -1,6 +1,8 @@
 :- use_module(library(clpfd)).
 :- consult(spielfelder).
 
+loesen(SpielfeldNummer) :- spielfeld(SpielfeldNummer, Spielfeld), time(sudoku(Spielfeld)), maplist(writeln, Spielfeld).
+
 % Loesung - Hart Codiert
 sudoku(Spielfeld_Zeilen) :-
   % Zuweisung der Zahlen zu den einzelnen Feldern des Spielfelds

@@ -1,6 +1,8 @@
 :- use_module(library(clpfd)).
 :- consult(spielfelder).
 
+loesen(SpielfeldNummer) :- spielfeld(SpielfeldNummer, Spielfeld), time(sudoku(Spielfeld)), maplist(writeln, Spielfeld).
+
 % Wie Loesung 1 - 3x3 Felder werden aus den Spalten erstellt
 % Ich will einfach gerne mal testen ob man so schneller/besser/etc. werden kann
 
