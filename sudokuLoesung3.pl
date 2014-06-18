@@ -3,6 +3,10 @@
 
 % Loesung - Hart Codiert
 sudoku(Spielfeld_Zeilen) :-
+  % Zuweisung der Zahlen zu den einzelnen Feldern des Spielfelds
+  append(Spielfeld_Zeilen, Werte), Werte ins 1..9,
+
+  % Definition der Zeilen
   Spielfeld_Zeilen = [[A1, A2, A3, A4, A5, A6, A7, A8, A9], 
                       [B1, B2, B3, B4, B5, B6, B7, B8, B9],  
                       [C1, C2, C3, C4, C5, C6, C7, C8, C9], 
@@ -14,8 +18,7 @@ sudoku(Spielfeld_Zeilen) :-
                       [I1, I2, I3, I4, I5, I6, I7, I8, I9]],
   
   
-  % Zuweisung der Zahlen zu den einzelnen Feldern des Spielfelds
-  append(Spielfeld_Zeilen, Werte), Werte ins 1..9,
+
 
   % Definition der Spalten
   Spielfeld_Spalten = [[A1, B1, C1, D1, E1, F1, G1, H1, I1],
