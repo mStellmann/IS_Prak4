@@ -17,10 +17,7 @@ sudoku(Spielfeld_Zeilen) :-
                       [H1, H2, H3, H4, H5, H6, H7, H8, H9], 
                       [I1, I2, I3, I4, I5, I6, I7, I8, I9]],
   
-  
-
-
-  % Definition der Spalten
+ % Definition der Spalten
   Spielfeld_Spalten = [[A1, B1, C1, D1, E1, F1, G1, H1, I1],
                        [A2, B2, C2, D2, E2, F2, G2, H2, I2],
                        [A3, B3, C3, D3, E3, F3, G3, H3, I3],
