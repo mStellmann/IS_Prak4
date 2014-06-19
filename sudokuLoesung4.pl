@@ -1,5 +1,10 @@
-% Dieses mal mit 'all_different' 
+:- use_module(library(clpfd)).
+:- consult(spielfelder).
 
+loesen(SpielfeldNummer) :- spielfeld(SpielfeldNummer, Spielfeld), time(sudoku(Spielfeld)), maplist(writeln, Spielfeld).
+
+% Dieses mal mit 'all_different' und alles sofort testen.. 
+% Quelle - KP :D irgendwo im netz
 sudoku([[A1,B1,C1,D1,E1,F1,G1,H1,I1],
         [A2,B2,C2,D2,E2,F2,G2,H2,I2],
         [A3,B3,C3,D3,E3,F3,G3,H3,I3],
