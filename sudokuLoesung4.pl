@@ -58,4 +58,4 @@ sudoku([[A1,B1,C1,D1,E1,F1,G1,H1,I1],
     all_different([A7,A8,A9,B7,B8,B9,C7,C8,C9]),
     all_different([D7,D8,D9,E7,E8,E9,F7,F8,F9]),
     all_different([G7,G8,G9,H7,H8,H9,I7,I8,I9]),
-    label(Vars).
+    label(Vars). % an dieser stelle werden allen werten eine zahl zugordnet
